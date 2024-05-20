@@ -17,10 +17,21 @@
   </main>
 </body>
 <script>
+  document.addEventListener("mousemove", parallax);
   setTimeout(() => {
     // hide loading animation and remove coming soon hidden class
     document.querySelector('.loading').style.display = 'none';
     document.querySelector('.coming-soon').classList.remove('hidden');
   }, 3000);
+  function parallax(e){
+  this.querySelectorAll(".layer").forEach(layer=>{
+    const speed = layer.getAttribute("data-speed");
+    
+    const x = (window.innerWidth - e.pageX*speed)/150;
+    const y = (window.innerHeight - e.pageY*speed)/150;
+    
+    layer.style.transform = `translateX(${x}px) translateY(${y}px)`
+  })
+}
 </script>
 </html>
