@@ -30,10 +30,19 @@ main {
 .coming-soon.hidden {
   opacity: 0;
 }
-.coming-soon img {
+.cover {
   object-fit: cover;
   width: 100%;
   height: 100%;
+}
+
+.layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @keyframes draw {
